@@ -1,0 +1,8 @@
+.card {
+  margin: 0 auto;
+}
+
+.card__img__detail {
+  height: 30rem;
+  width: 25rem;
+}

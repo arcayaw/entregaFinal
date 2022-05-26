@@ -1,0 +1,34 @@
+.card {
+  margin: 3rem;
+  margin: 0 auto;
+}
+
+.card__title {
+  font-size: 2rem;
+  text-align: center;
+  color: rosybrown;
+}
+
+.card__text {
+  color: gray;
+}
+
+/* .card__buttonStack {
+  margin: 0 auto;
+
+} */
+
+
+
+.card {
+  display: flex;
+}
+
+/* .card__img {
+  height: 18rem;
+  width: 15;
+} */
+
+.card__price {
+  margin: 0 auto;
+}

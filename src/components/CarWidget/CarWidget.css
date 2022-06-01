@@ -1,0 +1,12 @@
+.badge {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 50%;
+  background-color: #AA7680;
+  ;
+  color: black;
+}

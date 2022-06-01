@@ -34,10 +34,12 @@ export default function Header() {
                 <NavDropdown.Item>
                   <Link to="/category/2">Bebidas</Link>
                 </NavDropdown.Item>
+
                 <NavDropdown.Item>
                   <Link to="/category/3">Desayunos</Link>
                 </NavDropdown.Item>
               </NavDropdown>
+
               <Link to="/contacto">Contacto</Link>
               <Link to="/nosotros">Nosotros</Link>
               <CartWidget />

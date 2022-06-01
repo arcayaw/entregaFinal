@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     title: "Box Kids",
-    stock: 5,
+    stock: 2,
     price: 4500,
     description: "Regala relax a esa persona que tanto quieres.",
     imageUrl: "https://ibb.co/4dJ8pKh",
@@ -15,7 +15,7 @@ export const products = [
   {
     id: 2,
     title: "Box Rose",
-    stock: 5,
+    stock: 2,
     price: 3500,
     description: "Regala relax a esa persona que tanto quieres.",
     imageURL: "https://ibb.co/HPqpxX8",
@@ -28,7 +28,7 @@ export const products = [
   {
     id: 3,
     title: "Box Futbol",
-    stock: 5,
+    stock: 2,
     price: 4500,
     description: "Regala relax a esa persona que tanto quieres.",
     imageURL: "https://ibb.co/NnfZcZ3",

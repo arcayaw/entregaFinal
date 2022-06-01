@@ -1,4 +1,3 @@
-import ItemList from "../ItemList/ItemList";
 import { Container, Row, Col } from "react-bootstrap";
 import React from "react";
 import { products } from "../../data/productos";

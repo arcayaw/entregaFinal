@@ -5,6 +5,9 @@ const { Provider } = CartContext;
 
 const CartProvider = ({ children }) => {
   const [cart, setCart] = React.useState([]);
+
+  console.log(cart);
+
   // addToCart
   const addToCart = (item, count) => {
     if (isInCart(item.id)) {
@@ -22,22 +25,8 @@ const CartProvider = ({ children }) => {
 
   // removeFromCart
   const removeFromCart = (id) => {
-    //Replicar logica de addToCart pero invertida
-    //y chequear la funcion a realizar cuando el quantity es 1
-
-    //SI LA CANTIDAD ES IGUAL A 1 HACE ESTO
     const newCart = cart.filter((carItem) => carItem.id !== id);
     setCart(newCart);
-
-    // SINO
-
-    /*  const newCart = cart.map((cartItem) => {
-       if (cartItem.id === item.id) {
-         cartItem.quantity--;
-       }
-       return cartItem;
-     });
-     setCart(newCart); */
   };
   // deleteAll
   const deleteAll = () => {

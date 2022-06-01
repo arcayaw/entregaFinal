@@ -1,44 +1,47 @@
 import React from "react";
-import { useState } from "react";
-import Button from "react-bootstrap/Button";
-// import "./ItemCount.css";
+import { Button } from "react-bootstrap";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
-  const [count, setCount] = useState(initial);
+// eslint-disable-next-line
 
-  function sumar() {
+/* --------------- Declaracion de nuestro functional component -------------- */
+export default function AddButton({ count, setCount, stock, onSubmit }) {
+  /* -------------------- Funcion para aumentar la cantidad ------------------- */
+  const onAdd = () => {
     if (count < stock) {
       setCount(count + 1);
     }
-  }
+  };
 
-  function restar() {
+  /* ------------------- Funcion para disminuir la cantidad ------------------- */
+  const onDecrease = () => {
     if (count > 1) {
       setCount(count - 1);
     }
-  }
+  };
 
-  const agregarAlCarrito = () => {
-    onAdd(count);
+  /* ------------------------- Componente presentacion ------------------------ */
+  const StockButton = ({ handleOnClick, text }) => {
+    return (
+      <Button className="stock-button" onClick={() => handleOnClick()}>
+        {text}
+      </Button>
+    );
+  };
+  /* ------------------------- Componente presentacion ------------------------ */
+  const AddButton = ({ handleOnSubmit }) => {
+    return (
+      <Button className="btn add-button" onClick={() => handleOnSubmit()}>
+        Añadir al carrito
+      </Button>
+    );
   };
 
   return (
-    <>
-      <div className="botones">
-        <Button className="botonContador" onClick={restar}>
-          -
-        </Button>
-        <label className="numeroContador"> {count} </label>
-        <Button className="botonContador" onClick={sumar}>
-          +
-        </Button>{" "}
-        <br />
-        <Button className="botonContador" onClick={agregarAlCarrito}>
-          Agregar al carrito
-        </Button>
-      </div>
-    </>
+    <div className="add-button-container">
+      <StockButton text="-" handleOnClick={onDecrease} />
+      <span className="add-button-count">{count}</span>
+      <StockButton text="+" handleOnClick={onAdd} />
+      <AddButton handleOnSubmit={onSubmit} />
+    </div>
   );
-};
-
-export default ItemCount;
+}

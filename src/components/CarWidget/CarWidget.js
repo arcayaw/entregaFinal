@@ -10,10 +10,20 @@ export default function CartWidget() {
   const { cart } = React.useContext(CartContext);
   return (
     <div className="CartWidget">
-      <Link to="/cart">
-        <FontAwesomeIcon icon={faCartShopping} />
-        <span className="badge">{cart.length}</span>
-      </Link>
+      {cart.length === 0 ? (
+        <div className="emptyCart">
+          <Link to="/cart">
+            <FontAwesomeIcon icon={faCartShopping} />
+          </Link>
+        </div>
+      ) : (
+        <>
+          <Link to="/cart">
+            <FontAwesomeIcon icon={faCartShopping} />
+            <span className="badge">{cart.length}</span>
+          </Link>
+        </>
+      )}
     </div>
   );
 }

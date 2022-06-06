@@ -7,14 +7,12 @@ import Footer from "../../components/Footer/Footer";
 export default function Product() {
   const { productId } = useParams();
   return (
-    <Container>
-      <Row>
-        <Col>
-          <Header />
-          <ItemDetailContainer title="Mi producto" productId={+productId} />
-          <Footer />
-        </Col>
-      </Row>
-    </Container>
+    <Row>
+      <Col>
+        <Header />
+        <ItemDetailContainer title="Mi producto" productId={productId} />
+        <Footer />
+      </Col>
+    </Row>
   );
 }

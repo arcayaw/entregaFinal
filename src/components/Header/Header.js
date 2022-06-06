@@ -1,3 +1,4 @@
+import React from "react";
 import CartWidget from "../CarWidget/CarWidget";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
@@ -28,15 +29,15 @@ export default function Header() {
                 </NavDropdown.Item>
 
                 <NavDropdown.Item>
-                  <NavLink to="/category/1">Kids</NavLink>
+                  <Link to="/category/kids">Kids</Link>
                 </NavDropdown.Item>
 
                 <NavDropdown.Item>
-                  <Link to="/category/2">Bebidas</Link>
+                  <Link to="/category/bebidas">Bebidas</Link>
                 </NavDropdown.Item>
 
                 <NavDropdown.Item>
-                  <Link to="/category/3">Desayunos</Link>
+                  <Link to="/category/desayunos">Desayunos</Link>
                 </NavDropdown.Item>
               </NavDropdown>
 

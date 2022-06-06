@@ -1,6 +1,7 @@
 import React from "react";
+import { useContext, useState } from "react";
 
-const CartContext = React.createContext();
+const CartContext = React.createContext([]);
 const { Provider } = CartContext;
 
 const CartProvider = ({ children }) => {
@@ -28,10 +29,23 @@ const CartProvider = ({ children }) => {
     const newCart = cart.filter((carItem) => carItem.id !== id);
     setCart(newCart);
   };
+
+  //cantidadTotal
+  const cantidadTotal = () => {
+    return cart.reduce((acum, valor) => acum + valor.quantity, 0);
+    console.log(cantidadTotal);
+  };
+
   // deleteAll
   const deleteAll = () => {
     setCart([]);
   };
+
+  //precio total
+  const precioTotal = () => {
+    return cart.reduce((acum, valor) => acum + valor.quantity * valor.price, 0);
+  };
+
   // isInCart
   const isInCart = (id) => {
     return cart.find((item) => item.id === id);
@@ -44,6 +58,8 @@ const CartProvider = ({ children }) => {
         removeFromCart,
         deleteAll,
         isInCart,
+        precioTotal,
+        cantidadTotal,
         cart,
       }}>
       {children}

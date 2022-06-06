@@ -1,8 +1,14 @@
 .card {
+  height: 70rem;
+  width: 60rem;
+  display: flex;
   margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 
-.card__img__detail {
-  height: 30rem;
-  width: 25rem;
+.item-detail {
+  margin-top: 2rem;
+  height: 50rem;
+  width: 50rem;
 }

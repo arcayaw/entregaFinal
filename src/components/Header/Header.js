@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header>
       <Navbar bg="light" expand="lg">
-        <Container>
+        <Container className="container">
           <Navbar.Brand className=" display-1">
             <Link to="/">
               <img src={LogoNunchi} className="nav__logo" alt="Nunchi Logo" />

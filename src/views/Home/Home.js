@@ -16,26 +16,24 @@ export default function Home() {
           <Carousel.Item>
             <img className="d-block w-100" src={Hero4} alt="First slide" />
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3>Box de Regalo Personalizadas</h3>
+              <p>Ideas para regalar</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img className="d-block w-100" src={Hero3} alt="Second slide" />
 
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h3>Box de Regalo Personalizadas</h3>
+              <p>Ideas para regalar</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img className="d-block w-100 " src={Hero2} alt="Third slide" />
 
             <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
+              <h3>Box de Regalo Personalizadas</h3>
+              <p>Ideas para regalar</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

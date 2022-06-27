@@ -1,6 +1,14 @@
+.container {
+  display: flex;
+  margin-top: 3rem;
+  margin: ;
+}
+
 .card {
   margin: 3rem;
   margin: 0 auto;
+  justify-content: space-between;
+
 }
 
 .card__title {
@@ -20,9 +28,7 @@
 
 
 
-.card {
-  display: flex;
-}
+
 
 /* .card__img {
   height: 18rem;
@@ -30,5 +36,5 @@
 } */
 
 .card__price {
-  margin: 0 auto;
+  text-align: center;
 }

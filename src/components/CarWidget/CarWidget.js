@@ -12,7 +12,7 @@ export default function CartWidget() {
   console.log(cartList);
   return (
     <div className="CartWidget">
-      {cartList.length === 0 ? (
+      {cartList === 0 ? (
         <div className="emptyCart">
           <Link to="/cart">
             <FontAwesomeIcon icon={faCartShopping} />
@@ -22,7 +22,7 @@ export default function CartWidget() {
         <>
           <Link to="/cart">
             <FontAwesomeIcon icon={faCartShopping} />
-            <span className="badge">{cartList.length}</span>
+            <span className="badge">{cartList}</span>
           </Link>
         </>
       )}

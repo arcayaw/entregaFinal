@@ -1,5 +1,5 @@
 .card {
-  height: 70rem;
+  height: 75rem;
   width: 60rem;
   display: flex;
   margin: 0 auto;
@@ -8,7 +8,28 @@
 }
 
 .item-detail {
-  margin-top: 2rem;
+  margin-top: 5rem;
   height: 50rem;
   width: 50rem;
+}
+
+
+
+
+
+
+.card__title {
+  font-size: 2rem;
+  text-align: center;
+  color: rosybrown;
+}
+
+.card__text {
+  color: gray;
+}
+
+
+
+.card__price {
+  text-align: center;
 }

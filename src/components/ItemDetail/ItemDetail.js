@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function ItemDetail({ item }) {
   // Definimos variables del context
-  const { addToCart, cartList } = useCartContext();
+  const { addToCart, isInCart } = useCartContext();
 
   // Separamos el estado del count
   const [count, setCount] = useState(1);
@@ -17,15 +17,15 @@ export default function ItemDetail({ item }) {
       <Card className="card">
         <Card.Img variant="top" className="item-detail" src={item.image} />
         <Card.Body>
-          <Card.Title>{item.title}</Card.Title>
+          <Card.Title className="card__title">{item.title}</Card.Title>
 
           <Card.Text className="">{item.description}</Card.Text>
 
           <Card.Text className="">Contiene: {item.contiene}</Card.Text>
 
-          <h3>$ {item.price}</h3>
+          <h3 className="card__price">$ {item.price}</h3>
 
-          {cartList(item.id) ? (
+          {isInCart(item.id) ? (
             <>
               <Link to="/cart">
                 <Button>Finalizar Compra</Button>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import ItemDetailContainer from "../../components/ItemDetailContainer/ItemDetailContainer";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";

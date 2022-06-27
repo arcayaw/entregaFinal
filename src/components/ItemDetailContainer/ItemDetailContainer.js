@@ -1,48 +1,32 @@
-import { Container, Row, Col, Spinner } from "react-bootstrap";
 import React from "react";
-// import { products } from "../../data/productos";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Container } from "react-bootstrap";
+
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Loader from "../Loader/Loader";
-import {
-  getFirestore,
-  getDoc,
-  doc,
-  getDocs,
-  collection,
-  query,
-  where,
-} from "firebase/firestore";
+import { getFirestore, getDoc, doc } from "firebase/firestore";
 export default function ItemDetailContainer({ title, productId }) {
-  const [item, setItem] = React.useState({});
-  const [cargando, setCargando] = React.useState(true);
+  const [item, setItem] = useState([]);
+  const [cargando, setCargando] = useState([true]);
+  const { id } = useParams();
 
-  React.useEffect(
-    () => {
-      const db = getFirestore();
+  useEffect(() => {
+    const db = getFirestore();
 
-      setCargando(() => {
-        setCargando(false);
-      }, 5000);
+    const dbQuery = doc(db, "items", productId);
 
-      const item = doc(db, "items", productId);
-      getDoc(item).then((snapshot) => {
-        setItem({ id: snapshot.id, ...snapshot.data() });
-      });
-      setTimeout(() => {
-        setCargando(false);
-      }, 2000);
-    },
-    [productId],
-    setCargando
-  );
+    getDoc(dbQuery)
+      .then((resp) => setItem({ id: resp.id, ...resp.data() }))
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => setCargando(false));
+  }, [id]);
+
   return (
     <Container className="itemlist-container">
-      <Row>
-        <Col>
-          <h1>{title}</h1>
-        </Col>
-      </Row>
-      <Row>{cargando ? <Spinner /> : <ItemDetail item={item} />}</Row>
+      {cargando ? <Loader /> : <ItemDetail item={item} />}
     </Container>
   );
 }

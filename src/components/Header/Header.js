@@ -1,7 +1,7 @@
 import React from "react";
 import CartWidget from "../CarWidget/CarWidget";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Navbar, Container, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import LogoNunchi from "../../assets/image/LogoNunchiNegro.png";
 import "./Header.css";
 export default function Header() {
@@ -19,30 +19,10 @@ export default function Header() {
 
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="m-auto nav__menu">
-              <NavDropdown
-                title="Boxes Prediseñadas"
-                id="collasible-nav-dropdown">
-                <NavDropdown.Item>
-                  <NavLink to="/products" className="categorias">
-                    Ver todo
-                  </NavLink>
-                </NavDropdown.Item>
-
-                <NavDropdown.Item>
-                  <Link to="/category/kids">Kids</Link>
-                </NavDropdown.Item>
-
-                <NavDropdown.Item>
-                  <Link to="/category/bebidas">Bebidas</Link>
-                </NavDropdown.Item>
-
-                <NavDropdown.Item>
-                  <Link to="/category/desayunos">Desayunos</Link>
-                </NavDropdown.Item>
-              </NavDropdown>
-
-              <Link to="/contacto">Contacto</Link>
-              <Link to="/nosotros">Nosotros</Link>
+              <Link to="/category/kids">Kids</Link>
+              <Link to="/category/bebidas">Bebidas</Link>
+              <Link to="/category/desayunos">Desayunos</Link>
+              <Link to="/products">Todas</Link>
               <CartWidget />
             </Nav>
           </Navbar.Collapse>

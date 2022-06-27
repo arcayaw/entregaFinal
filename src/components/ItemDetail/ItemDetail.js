@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
-import { CartContext } from "../Context/CartContext";
+import { useCartContext } from "../Context/CartContext";
 import "./itemDetail.css";
 import { Link } from "react-router-dom";
 
 export default function ItemDetail({ item }) {
   // Definimos variables del context
-  const { addToCart, isInCart } = React.useContext(CartContext);
+  const { addToCart, cartList } = useCartContext();
 
   // Separamos el estado del count
-  const [count, setCount] = React.useState(1);
+  const [count, setCount] = useState(1);
 
   return (
     <>
@@ -25,7 +25,7 @@ export default function ItemDetail({ item }) {
 
           <h3>$ {item.price}</h3>
 
-          {isInCart(item.id) ? (
+          {cartList(item.id) ? (
             <>
               <Link to="/cart">
                 <Button>Finalizar Compra</Button>
